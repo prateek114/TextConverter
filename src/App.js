@@ -26,39 +26,16 @@ function App() {
     },1500)
   }
 
-  const removeBodyClasses=()=>{
-    document.body.classList.remove('bg-light');
-    document.body.classList.remove('bg-dark');
-    document.body.classList.remove('bg-primary');
-    document.body.classList.remove('bg-success');
-    document.body.classList.remove('bg-warning');
-    document.body.classList.remove('bg-danger');
-    document.body.classList.remove('bg-white');
-  }
+
 
   const modeEnable=(cls)=>{
-    removeBodyClasses();
-    if(cls==='white'){
-      setMode('light');
-      document.body.style.backgroundColor="white";
-      showAlert("Light Mode Enabled","success")
-      
-    }
+    
 
-    else if(cls==='black'){
+    if(mode==='light'){
       setMode('dark');
       document.body.style.backgroundColor="rgb(15,57,76)";
       showAlert("Dark Mode Enabled","success")
-    }
-    else{
-      document.body.classList.add('bg-'+cls);
-    }
-
-    // if(mode==='light'){
-    //   setMode('dark');
-    //   document.body.style.backgroundColor="rgb(15,57,76)";
-    //   showAlert("Dark Mode Enabled","success")
-      // document.title="TextUtils-Dark Mode Enabled"
+      document.title="TextUtils-Dark Mode Enabled"
 
       // setInterval(()=>{
       //   document.title="TextUtils is Amazing"
@@ -67,14 +44,14 @@ function App() {
       // setInterval(()=>{
       //   document.title="Amazing"
       // },1500)
-    // }
+    }
 
-    // else{
-    //   setMode('light');
-    //   document.body.style.backgroundColor="white";
-    //   showAlert("Light Mode Enabled","success")
-      // document.title="TextUtils-Light Mode Enabled"
-    // }
+    else{
+      setMode('light');
+      document.body.style.backgroundColor="white";
+      showAlert("Light Mode Enabled","success")
+      document.title="TextUtils-Light Mode Enabled"
+    }
   }
 
 
